@@ -38,7 +38,7 @@ public class Pedido {
     private String formaPagamento;
     private Integer quantidadeItens;
     private LocalDate dataPedido;
-
+    private Boolean status = true;
 
     // Getters e Setters
     public Long getId() {
@@ -104,4 +104,13 @@ public class Pedido {
     public void setDataPedido(LocalDate dataPedido) {
         this.dataPedido = dataPedido;
     }
+
+    public Boolean getStatus() {
+        return status;
+    }
+
+    public void setStatus(Boolean status) {
+        this.status = status;
+    }
+
 }

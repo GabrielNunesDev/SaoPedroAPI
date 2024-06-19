@@ -38,12 +38,6 @@ public class PedidoController {
         return pedido.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
     }
 
-    @PutMapping("/{id}")
-    public ResponseEntity<Pedido> atualizarPedido(@PathVariable Long id, @RequestBody Pedido detalhesPedido) {
-        Optional<Pedido> pedidoAtualizado = pedidoService.atualizarPedido(id, detalhesPedido);
-        return pedidoAtualizado.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
-    }
-
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deletarPedido(@PathVariable Long id) {
         boolean isDeleted = pedidoService.deletarPedido(id);
