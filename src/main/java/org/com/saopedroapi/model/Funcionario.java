@@ -19,7 +19,6 @@ public class Funcionario {
 
     private Long id;
     private String nome;
-    private Integer idade;
     private String email;
     private String cargo;
 }

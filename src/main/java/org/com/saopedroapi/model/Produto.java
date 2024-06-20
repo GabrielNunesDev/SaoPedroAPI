@@ -18,10 +18,9 @@ public class Produto {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
     String nome;
-    Integer preco;
+    Integer precoUnitario;
     String formaFarmaceutica;
     String fabricante;
-
-    //criar ENUM para contraindicações
+    Integer quantidadeDisponivel;
 
 }
