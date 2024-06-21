@@ -1,5 +1,6 @@
 package org.com.saopedroapi.controller;
 
+import jakarta.validation.Valid;
 import org.com.saopedroapi.model.Cliente;
 import org.com.saopedroapi.service.ClienteService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +17,7 @@ public class ClienteController {
     private ClienteService clienteService;
 
     @PostMapping
-    public ResponseEntity<String> cadastrar(@RequestBody Cliente cliente) {
+    public ResponseEntity<String> cadastrar(@RequestBody @Valid Cliente cliente) {
         return clienteService.cadastrar(cliente);
     }
 
