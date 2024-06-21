@@ -6,6 +6,8 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
+import java.math.BigDecimal;
+
 @Entity
 @Table(name = "produtos")
 @AllArgsConstructor
@@ -18,9 +20,9 @@ public class Produto {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
     String nome;
-    Integer precoUnitario;
+    BigDecimal precoUnitario;
     String formaFarmaceutica;
     String fabricante;
-    Integer quantidadeDisponivel;
+    Integer quantidade;
 
 }
