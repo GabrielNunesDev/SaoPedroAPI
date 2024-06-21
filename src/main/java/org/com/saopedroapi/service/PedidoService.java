@@ -20,7 +20,6 @@ public class PedidoService {
     }
 
     public Pedido criarPedido(Pedido pedido) {
-        calcularValorTotal(pedido);
         return pedidoRepository.save(pedido);
     }
 
@@ -43,17 +42,6 @@ public class PedidoService {
             return true;
         } else {
             return false;
-        }
-    }
-
-    private void calcularValorTotal(Pedido pedido) {
-        if (pedido.getQuantidadeItens() != null && pedido.getProduto() != null && pedido.getProduto().getPrecoUnitario() != null) {
-            BigDecimal quantidade = BigDecimal.valueOf(pedido.getQuantidadeItens());
-            BigDecimal precoUnitario = BigDecimal.valueOf(pedido.getProduto().getPrecoUnitario());
-            BigDecimal valorTotal = quantidade.multiply(precoUnitario);
-            pedido.setValorTotal(valorTotal);
-        } else {
-            pedido.setValorTotal(BigDecimal.ZERO);
         }
     }
 }

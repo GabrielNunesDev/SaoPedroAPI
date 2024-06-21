@@ -40,5 +40,4 @@ public class Pedido {
     private BigDecimal valorTotal;
     private Boolean status = true;
 
-
 }
