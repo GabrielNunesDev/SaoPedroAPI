@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import org.com.saopedroapi.enums.FormaFarmaceuticaEnum;
 
 import java.math.BigDecimal;
 
@@ -16,13 +17,14 @@ import java.math.BigDecimal;
 @EqualsAndHashCode(of = "id")
 public class Produto {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
     String nome;
-    BigDecimal precoUnitario;
-    String formaFarmaceutica;
-    String fabricante;
-    Integer quantidade;
+    BigDecimal valorUnitario;
+    Integer quantidadeDisponivel;
+
+    @Enumerated(EnumType.STRING)
+    private FormaFarmaceuticaEnum formaFarmaceuticaEnum;
+
 
 }

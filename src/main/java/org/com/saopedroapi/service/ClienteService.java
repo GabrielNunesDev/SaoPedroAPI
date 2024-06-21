@@ -3,6 +3,7 @@ package org.com.saopedroapi.service;
 import org.com.saopedroapi.model.Cliente;
 import org.com.saopedroapi.repository.ClienteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -14,8 +15,9 @@ public class ClienteService {
     @Autowired
     private ClienteRepository clienteRepository;
 
-    public void cadastrar(Cliente cliente) {
+    public ResponseEntity<String> cadastrar(Cliente cliente) {
         clienteRepository.save(cliente);
+        return ResponseEntity.ok("Cliente cadastrado com sucesso!");
     }
 
     public List<Cliente> listarClientes() {

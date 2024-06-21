@@ -32,9 +32,8 @@ public class ProdutoService {
         if (produtoOptional.isPresent()) {
             Produto produtoExistente = produtoOptional.get();
             produtoExistente.setNome(produtoDetalhes.getNome());
-            produtoExistente.setPrecoUnitario(produtoDetalhes.getPrecoUnitario());
-            produtoExistente.setFormaFarmaceutica(produtoDetalhes.getFormaFarmaceutica());
-            produtoExistente.setFabricante(produtoDetalhes.getFabricante());
+            produtoExistente.setValorUnitario(produtoDetalhes.getValorUnitario());
+            produtoExistente.setFormaFarmaceuticaEnum(produtoDetalhes.getFormaFarmaceuticaEnum());
 
             return Optional.of(produtoRepository.save(produtoExistente));
         } else {

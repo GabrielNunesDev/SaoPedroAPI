@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import org.com.saopedroapi.enums.CargoFuncionarioEnum;
 
 @Entity
 @Table(name = "funcionarios")
@@ -14,11 +15,10 @@ import lombok.NoArgsConstructor;
 @EqualsAndHashCode(of = "id")
 public class Funcionario {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nome;
-    private String email;
-    private String cargo;
+
+    @Enumerated(EnumType.STRING)
+    private CargoFuncionarioEnum cargoFuncionarioEnum;
 }
