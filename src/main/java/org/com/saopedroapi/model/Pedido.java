@@ -38,6 +38,7 @@ public class Pedido {
     private Integer quantidadeItens;
     private LocalDate dataPedido;
     private BigDecimal valorTotal;
-    private String status;
+    private Boolean status = true;
+
 
 }

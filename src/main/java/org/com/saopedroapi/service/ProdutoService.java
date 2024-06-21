@@ -32,7 +32,7 @@ public class ProdutoService {
         if (produtoOptional.isPresent()) {
             Produto produtoExistente = produtoOptional.get();
             produtoExistente.setNome(produtoDetalhes.getNome());
-            produtoExistente.setPreco(produtoDetalhes.getPreco());
+            produtoExistente.setPrecoUnitario(produtoDetalhes.getPrecoUnitario());
             produtoExistente.setFormaFarmaceutica(produtoDetalhes.getFormaFarmaceutica());
             produtoExistente.setFabricante(produtoDetalhes.getFabricante());
 
