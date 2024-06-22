@@ -26,5 +26,4 @@ public class Produto {
     @Enumerated(EnumType.STRING)
     private FormaFarmaceuticaEnum formaFarmaceuticaEnum;
 
-
 }
